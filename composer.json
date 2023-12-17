@@ -1,6 +1,7 @@
 {
   "name": "nubox/laminas-router-annotations",
   "description": "Use Symfony Route Annotations for Laminas Controller",
+  "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Sebastian Hopfe",

@@ -1,0 +1,20 @@
+{
+  "name": "nubox/laminas-router-annotations",
+  "description": "Use Symfony Route Annotations for Laminas Controller",
+  "authors": [
+    {
+      "name": "Sebastian Hopfe",
+      "email": "nusphere83@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
+    "symfony/routing": "*",
+    "laminas/laminas-router": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "\\Laminas\\Router\\Annotations\\": "src"
+    }
+  }
+}

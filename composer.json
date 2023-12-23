@@ -13,9 +13,17 @@
     "symfony/routing": "*",
     "laminas/laminas-router": "*"
   },
+  "require-dev": {
+    "laminas/laminas-test": "*"
+  },
   "autoload": {
     "psr-4": {
-      "\\Laminas\\Router\\Annotations\\": "src"
+      "Laminas\\Router\\Annotations\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Laminas\\Router\\Annotations\\Test\\": "tests"
     }
   }
 }

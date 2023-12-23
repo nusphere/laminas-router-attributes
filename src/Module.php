@@ -1,8 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Laminas\Router\Annotations;
 
 use Laminas\ModuleManager\Feature\ConfigProviderInterface;
+
+use function dirname;
 
 final class Module implements ConfigProviderInterface
 {

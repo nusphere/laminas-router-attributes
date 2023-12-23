@@ -14,7 +14,13 @@
     "laminas/laminas-router": "*"
   },
   "require-dev": {
+    "laminas/laminas-coding-standard": "~2.5.0",
     "laminas/laminas-test": "*"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   },
   "autoload": {
     "psr-4": {
@@ -25,5 +31,15 @@
     "psr-4": {
       "Laminas\\Router\\Annotations\\Test\\": "tests"
     }
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@test"
+    ],
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "static-analysis": "psalm --shepherd --stats",
+    "test": "phpunit --colors=always"
   }
 }

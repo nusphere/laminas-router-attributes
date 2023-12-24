@@ -1,18 +1,12 @@
 <?php
 
-/**
- * If you need an environment-specific system or application configuration,
- * there is an example in the documentation
- *
- * @see https://docs.laminas.dev/tutorials/advanced-config/#environment-specific-system-configuration
- * @see https://docs.laminas.dev/tutorials/advanced-config/#environment-specific-application-configuration
- */
+declare(strict_types=1);
 
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
         'Laminas\Router',
-        'Laminas\Router\Annotations'
+        'Laminas\Router\Annotations',
     ],
 
     // These are various options for the listeners attached to the ModuleManager

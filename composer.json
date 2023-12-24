@@ -1,6 +1,6 @@
 {
-  "name": "nubox/laminas-router-annotations",
-  "description": "Use Symfony Route Annotations for Laminas Controller",
+  "name": "nubox/laminas-router-attributes",
+  "description": "Use Symfony Route Attributes for Laminas Controller",
   "license": "BSD-3-Clause",
   "authors": [
     {
@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Laminas\\Router\\Annotations\\": "src"
+      "Laminas\\Router\\Attributes\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Laminas\\Router\\Annotations\\Test\\": "tests"
+      "Laminas\\Router\\Attributes\\Test\\": "tests"
     }
   },
   "scripts": {

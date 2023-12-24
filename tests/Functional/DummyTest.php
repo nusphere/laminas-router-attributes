@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laminas\Router\Annotations\Test\Functional;
+namespace Laminas\Router\Attributes\Test\Functional;
 
 use Exception;
 use Laminas\Test\PHPUnit\Controller\AbstractControllerTestCase;

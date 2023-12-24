@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laminas\Router\Annotations\Test\Functional\Demo\Controller;
+namespace Laminas\Router\Attributes\Test\Functional\Demo\Controller;
 
 use Laminas\Http\Response;
 use Laminas\Mvc\Controller\AbstractActionController;

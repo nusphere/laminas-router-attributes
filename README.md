@@ -10,7 +10,7 @@ This guide will walk you through on how to use Symfony Route Attributes in Lamin
 
 Install the required packages via composer.
 
-`composer require nubox/laminas-router-annotations`
+`composer require nubox/laminas-router-attributes`
 
 ## Usage
 

@@ -20,10 +20,10 @@ annotate with Symfony's Route attributes instead of the laminas configuration.
 ```php
 <?php 
 
-namespace App\Controller; 
+namespace Module\Controller; 
 
-use Symfony\Component\Routing\Annotation\Route; 
 use Laminas\Mvc\Controller\AbstractActionController;
+use Symfony\Component\Routing\Attribute\Route;
 
 class MyController extends AbstractActionController 
 { 

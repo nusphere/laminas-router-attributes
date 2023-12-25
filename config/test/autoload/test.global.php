@@ -11,18 +11,4 @@ return [
             DemoController::class => InvokableFactory::class,
         ],
     ],
-    'router'      => [
-        'routes' => [
-            'home' => [
-                'type'    => Laminas\Router\Http\Literal::class,
-                'options' => [
-                    'route'    => '/demo',
-                    'defaults' => [
-                        'controller' => DemoController::class,
-                        'action'     => 'demo',
-                    ],
-                ],
-            ],
-        ],
-    ],
 ];

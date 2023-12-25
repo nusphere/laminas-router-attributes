@@ -1,1 +1,1 @@
-# laminas-router-annotations
+# laminas-router-attributes

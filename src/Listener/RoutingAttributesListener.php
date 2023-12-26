@@ -13,10 +13,10 @@ use Laminas\Router\Attributes\Loader\AttributesClassLoader;
 use Laminas\Router\RouteMatch;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
+use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
-use Symfony\Component\Routing\RouteCollection;
 
 use function array_keys;
 
@@ -40,30 +40,32 @@ class RoutingAttributesListener implements ListenerAggregateInterface
 
         $controllerSettings = $configuration['controllers']['factories'];
 
-        $classLoader     = new AttributesClassLoader();
-        $routeCollection = new RouteCollection();
+        $classLoader = new AttributesClassLoader();
 
         foreach (array_keys($controllerSettings) as $controller) {
-            $routeCollection->addCollection($classLoader->load($controller));
+            $context = new RequestContext();
+            $context->setMethod($request->getMethod());
+            $context->setBaseUrl($request->getBaseUrl());
+            //$context->setHost($request->get)
+            //$context->setScheme()
+
+            $urlMatcher = new UrlMatcher($classLoader->load($controller), $context);
+
+            try {
+                $match = $urlMatcher->match($request->getRequestUri());
+
+                $routeMatch = new RouteMatch($match);
+                $routeMatch->setMatchedRouteName($match['_route']);
+
+                $event->setRouteMatch($routeMatch);
+                $event->stopPropagation();
+                $event->setError(null);
+
+                return $routeMatch;
+            } catch (ResourceNotFoundException | MethodNotAllowedException) {
+            }
         }
-
-        $context    = new RequestContext();
-        $urlMatcher = new UrlMatcher($routeCollection, $context);
-
-        try {
-            $match = $urlMatcher->match($request->getRequestUri());
-
-            $routeMatch = new RouteMatch($match);
-            $routeMatch->setMatchedRouteName($match['_route']);
-
-            $event->setRouteMatch($routeMatch);
-            $event->stopPropagation();
-            $event->setError(null);
-
-            return $routeMatch;
-        } catch (ResourceNotFoundException) {
-            return null;
-        }
+        return null;
     }
 
     /**

@@ -18,4 +18,15 @@ final class DemoController extends AbstractActionController
 
         return $response;
     }
+
+    #[Route(path: '/path/sub', name: 'post-route', methods: ['POST'])]
+    public function postDemoAction(): Response
+    {
+        $post = $this->getRequest()->getPost('test');
+
+        $response = new Response();
+        $response->setContent('You POST: ' . $post);
+
+        return $response;
+    }
 }

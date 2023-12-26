@@ -12,11 +12,16 @@
     "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
     "symfony/config": "*",
     "symfony/routing": "*",
+    "symfony/http-foundation": "*",
     "laminas/laminas-router": "*"
   },
   "require-dev": {
     "laminas/laminas-coding-standard": "~2.5.0",
-    "laminas/laminas-test": "*"
+    "laminas/laminas-test": "*",
+    "symfony/expression-language": "*"
+  },
+  "suggest": {
+    "symfony/expression-language": "to use symfony conditonal routes"
   },
   "config": {
     "allow-plugins": {

@@ -9,8 +9,8 @@ use Laminas\ServiceManager\Factory\InvokableFactory;
 return [
     'controllers' => [
         'factories' => [
-            DemoController::class => InvokableFactory::class,
-            SymfonyDemoController::class => InvokableFactory::class
+            DemoController::class        => InvokableFactory::class,
+            SymfonyDemoController::class => InvokableFactory::class,
         ],
     ],
 ];

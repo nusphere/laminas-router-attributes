@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Laminas\Router\Attributes\Test\Functional\Demo\Controller;
 
 use Laminas\Http\Response;
@@ -22,5 +24,4 @@ class SymfonyDemoController extends AbstractActionController
 
         return $response;
     }
-
 }

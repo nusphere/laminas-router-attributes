@@ -63,6 +63,7 @@ class RoutingAttributesListener implements ListenerAggregateInterface
             } catch (ResourceNotFoundException | MethodNotAllowedException) {
             }
         }
+
         return null;
     }
 

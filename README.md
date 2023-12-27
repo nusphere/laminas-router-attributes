@@ -45,6 +45,9 @@ That's all! You have successfully configured Symfony Route Attributes in your La
   * `name` -> set up a name for the route
   * `condition` -> for more complex conditions about your route (require `symfony/expression-language`)
   * `methods` -> restrict the route to an explicit method
+  * `requirments` -> Parameters Validation via RegExp
+  * `inline-defaults` -> Inline default-settings (in combination with conditions, also)
+  * `defaults` -> add default settings
 
 ## Troubleshooting
 

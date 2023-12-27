@@ -6,7 +6,7 @@ return [
     // Retrieve list of modules used in this application.
     'modules' => [
         'Laminas\Router',
-        'Laminas\Router\Attributes',
+        Laminas\Router\Attributes\Module::class,
     ],
 
     // These are various options for the listeners attached to the ModuleManager

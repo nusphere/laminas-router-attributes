@@ -46,8 +46,6 @@ class RoutingAttributesListener implements ListenerAggregateInterface
             $context = new RequestContext();
             $context->setMethod($request->getMethod());
             $context->setBaseUrl($request->getBaseUrl());
-            //$context->setHost($request->get)
-            //$context->setScheme()
 
             $urlMatcher = new UrlMatcher($classLoader->load($controller), $context);
 

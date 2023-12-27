@@ -38,6 +38,14 @@ In the example above, `#[Route('/my-path', name: 'my_route_name')]` defines the 
 
 That's all! You have successfully configured Symfony Route Attributes in your Laminas Action Controller.
 
+## Supported behavior from Symfony routes
+
+* configuration via Attributes
+  * `path` -> domain route for methods or classes
+  * `name` -> set up a name for the route
+  * `condition` -> for more complex conditions about your route (require `symfony/expression-language`)
+  * `methods` -> restrict the route to an explicit method
+
 ## Troubleshooting
 
 If you run into any issue while trying to use Symfony Route attributes in your Laminas Action Controller, please refer to the respective Symfony and Laminas documentation.

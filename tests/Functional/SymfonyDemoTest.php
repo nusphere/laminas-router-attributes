@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Laminas\Router\Attributes\Test\Functional;
 
-use Exception;
 use Laminas\Test\PHPUnit\Controller\AbstractControllerTestCase;
-
 use Laminas\View\Exception\RuntimeException;
+
 use function dirname;
 use function header;
 

@@ -7,7 +7,7 @@ namespace Laminas\Router\Attributes\Listener;
 use Laminas\EventManager\EventManagerInterface;
 use Laminas\EventManager\ListenerAggregateInterface;
 use Laminas\EventManager\ListenerAggregateTrait;
-use Laminas\Http\Request;
+use Laminas\Http\PhpEnvironment\Request;
 use Laminas\Mvc\MvcEvent;
 use Laminas\Router\Attributes\Loader\AttributesClassLoader;
 use Laminas\Router\RouteMatch;
@@ -20,7 +20,7 @@ use Symfony\Component\Routing\RequestContext;
 
 use function array_keys;
 
-class RoutingAttributesListener implements ListenerAggregateInterface
+final class RoutingAttributesListener implements ListenerAggregateInterface
 {
     use ListenerAggregateTrait;
 
@@ -46,8 +46,6 @@ class RoutingAttributesListener implements ListenerAggregateInterface
             $context = new RequestContext();
             $context->setMethod($request->getMethod());
             $context->setBaseUrl($request->getBaseUrl());
-            //$context->setHost($request->get)
-            //$context->setScheme()
 
             $urlMatcher = new UrlMatcher($classLoader->load($controller), $context);
 
@@ -59,12 +57,13 @@ class RoutingAttributesListener implements ListenerAggregateInterface
 
                 $event->setRouteMatch($routeMatch);
                 $event->stopPropagation();
-                $event->setError(null);
+                $event->setError('');
 
                 return $routeMatch;
             } catch (ResourceNotFoundException | MethodNotAllowedException) {
             }
         }
+
         return null;
     }
 

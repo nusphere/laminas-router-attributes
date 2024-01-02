@@ -12,6 +12,19 @@ Install the required packages via composer.
 
 `composer require nubox/laminas-router-attributes`
 
+## Activate Plugin in our Laminas Application
+
+```php
+return [
+    // Retrieve list of modules used in this application.
+    'modules' => [
+        ...,
+        \Laminas\Router\Attributes\Module::class, // or 'Laminas\Router\Attributes'
+    ],
+    ...
+];
+```
+
 ## Usage
 
 You can start by creating a new action controller which we will 
